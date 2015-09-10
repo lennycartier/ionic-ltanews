@@ -1,0 +1,13 @@
+<ion-view view-title="Agenda">
+  <ion-content ng-init="init()">
+    <ion-list>
+      <div class="list">
+        <div collection-repeat="entry in entries" class="item item-avatar" ng-click="browse(entry.link)">
+          <img src="img/latechsmall.png">
+          <b>{{entry.title}}</b><br>
+          <span ng-bind-html="entry.contentSnippet"></span>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

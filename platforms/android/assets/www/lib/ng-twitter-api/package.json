@@ -1,0 +1,27 @@
+{
+    "name": "ng-twitter-api",
+    "version": "0.1.5",
+    "description": "AngularJS Twitter REST Api wrapper library",
+    "author": {
+        "name": "Simon Reimler",
+        "url": "http://www.devdactic.com"
+    },
+    "homepage": "https://www.devdactic.com",
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-clean": "~0.6.0",
+        "grunt-contrib-uglify": "~0.5.0",
+        "grunt-contrib-concat": "^0.5.1"
+    },
+    "keywords": [
+        "angularjs",
+        "oauth",
+        "api",
+        "twitter"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "test": "grunt test"
+    }
+}

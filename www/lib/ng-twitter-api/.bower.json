@@ -1,0 +1,40 @@
+{
+  "name": "ng-twitter-api",
+  "version": "0.1.5",
+  "authors": [
+    "Simon Reimler <http://www.devdactic.com>"
+  ],
+  "homepage": "https://github.com/saimon24/ng-twitter",
+  "description": "AngularJS Twitter REST Api wrapper library",
+  "main": "./dist/ng-twitter-api.js",
+  "license": "MIT",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "ng-twitter-api",
+    "twitter",
+    "angularjs",
+    "oauth"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jsSHA": "1.6.0"
+  },
+  "_release": "0.1.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.5",
+    "commit": "d666d506b5fee1c87051a53ccbbc97b59eb19694"
+  },
+  "_source": "git://github.com/saimon24/ng-twitter.git",
+  "_target": "~0.1.5",
+  "_originalSource": "ng-twitter-api",
+  "_direct": true
+}
