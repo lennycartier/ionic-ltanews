@@ -1,6 +1,8 @@
 # Non-project-specific build files:
 build.xml
 local.properties
+ant.properties
+release-signing.properties
 /gradlew
 /gradlew.bat
 /gradle
