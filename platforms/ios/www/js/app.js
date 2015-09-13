@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -28,15 +28,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controlle
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'templates/menu.html'
   })
 
   .state('app.settings', {
     url: '/settings',
     views: {
       'menuContent': {
-        templateUrl: 'templates/settings.html'
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   })
@@ -76,5 +76,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controlle
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/agenda');
+  $urlRouterProvider.otherwise('/app/settings');
 });

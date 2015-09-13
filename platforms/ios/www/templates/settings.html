@@ -1,28 +1,18 @@
 <ion-view view-title="Réglages">
   <ion-content>
     <div class="list">
-
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Rss #
-    </div>
-    <select>
-      <option>5</option>
-      <option selected>10</option>
-      <option>15</option>
-    </select>
-  </label>
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Tweets #
-    </div>
-    <select>
-      <option>5</option>
-      <option selected>10</option>
-      <option>15</option>
-    </select>
-  </label>
-
-</div>
-  </ion-content>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Rss #</span>
+      <form>
+      <input type="number" integer ng-model="rss.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="10" ng-change="setRssNb();">
+      </form>
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Tweets #</span>
+      <form>
+      <input type="number" integer ng-model="tweets.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="10" ng-change="setTwNb();">
+    </form>
+    </label>
+  </div>
 </ion-view>
+</div>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.ltanews103409" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.ltanews103409" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>ltanews</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Agrège les news de LaTechAmienoise
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="l.cartier@free.fr" href="http://datanotes.org/">
+      Lenny Cartier
     </author>
   <content src="index.html"/>
   <access origin="*"/>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,20 +23,22 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controlle
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+    
   $stateProvider
 
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'templates/menu.html'
   })
 
   .state('app.settings', {
     url: '/settings',
     views: {
       'menuContent': {
-        templateUrl: 'templates/settings.html'
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsCtrl',
+        cache: 'false'
       }
     }
   })
@@ -54,7 +56,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngTwitter', 'starter.controlle
       views: {
         'menuContent': {
           templateUrl: 'templates/agenda.html',
-          controller: 'AgendaCtrl'
+          controller: 'AgendaCtrl',
+          cache: 'false'
         }
       }
     })
