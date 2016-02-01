@@ -1,17 +1,21 @@
-<ion-view view-title="Réglages">
+<ion-view view-title="Réglages" cache-view="false">
   <ion-content>
     <div class="list">
     <label class="item item-input item-stacked-label">
       <span class="input-label">Rss #</span>
       <form>
-      <input type="number" integer ng-model="rss.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="10" ng-change="setRssNb();">
+      <input type="number" integer ng-model="rss.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="# of rss items to fetch" ng-change="setRssNb();">
       </form>
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Tweets #</span>
       <form>
-      <input type="number" integer ng-model="tweets.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="10" ng-change="setTwNb();">
+      <input type="number" integer ng-model="tweets.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="# of tweets to fetch" ng-change="setTwNb();">
     </form>
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Locale : </span>
+      <span>{{localerecup}}</span>
     </label>
   </div>
 </ion-view>

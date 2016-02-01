@@ -5,6 +5,14 @@ node_modules
 *.tmp
 *.tmp.*
 log.txt
+bower_components/
+components/
+tmp
+temp
+dist
+platforms/
+plugins/
+www/lib
 example/cordova/iOS/www/js/framework
 
 example/cordova/iOS/www/js/framework
@@ -17,12 +25,6 @@ UserInterfaceState.xcuserstate
 *.sublime-project
 
 *.sublime-workspace
-
-bower_components/
-components/
-tmp
-temp
-dist
 
 .idea
 

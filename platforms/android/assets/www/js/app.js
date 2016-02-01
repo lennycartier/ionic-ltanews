@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -22,8 +22,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-    
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  
   $stateProvider
 
     .state('app', {
@@ -80,4 +80,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
       });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/agenda');
+
 });

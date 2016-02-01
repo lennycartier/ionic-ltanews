@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= locale %>">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src &apos;self&apos; &apos;unsafe-inline&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -14,7 +14,10 @@
     -->
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+    <!-- moment.js -->
+    <script src="bower_components/moment/moment.js"></script>
 
     <!-- dependencies -->
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
@@ -24,6 +27,9 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+
+    <!-- angularjs fr-fr i18n -->
+    <script src="js/i18n/angular-locale_fr-fr.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -37,7 +43,7 @@
     <script src="js/controllers.js"></script>
   </head>
 
-  <body ng-app="starter" class="platform-ios platform-cordova platform-webview">
+  <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
     <ion-footer-bar class="bar bar-footer bar-balanced" style="background-color:#333333">
       <div class="title" style="font-variant: small-caps; font-family: " oswald",sans-serif;"="">La Tech Ami&#xE9;noise</div>

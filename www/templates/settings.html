@@ -13,6 +13,10 @@
       <input type="number" integer ng-model="tweets.nb" ng-model-options="{debounce: 350}" min="1" max="20" placeholder="# of tweets to fetch" ng-change="setTwNb();">
     </form>
     </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Locale : </span>
+      <span>{{localerecup}}</span>
+    </label>
   </div>
 </ion-view>
 </div>

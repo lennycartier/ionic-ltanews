@@ -23,6 +23,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+    
   $stateProvider
 
     .state('app', {
@@ -36,7 +37,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
     views: {
       'menuContent': {
         templateUrl: 'templates/settings.html',
-        controller: 'SettingsCtrl'
+        controller: 'SettingsCtrl',
+        cache: 'false'
       }
     }
   })
@@ -54,7 +56,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
       views: {
         'menuContent': {
           templateUrl: 'templates/agenda.html',
-          controller: 'AgendaCtrl'
+          controller: 'AgendaCtrl',
+          cache: 'false'
         }
       }
     })
@@ -76,5 +79,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'ngStorage'
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/settings');
+  $urlRouterProvider.otherwise('/app/agenda');
 });

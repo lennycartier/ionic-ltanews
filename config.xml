@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.ltanews103409" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.ltanews103409" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>ltanews</name>
   <description>
         Agrège les news de LaTechAmienoise
@@ -8,7 +8,7 @@
       Lenny Cartier
     </author>
   <content src="index.html"/>
-  <access origin="*"/>
+  <access origin="http://assets.datanotes.org/latechamienoise/*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

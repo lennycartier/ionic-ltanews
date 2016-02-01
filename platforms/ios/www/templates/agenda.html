@@ -1,13 +1,27 @@
 <ion-view view-title="Agenda">
-  <ion-content ng-init="init()">
-
+  <ion-content ng-init="init()" cache-view="false">
+<br />
     <ion-list>
       <div class="list">
-        <div collection-repeat="entry in entries" class="item item-avatar" ng-click="browse(entry.link)">
-          <p>Number = {{number}}</p>
+		  <div collection-repeat="event in events" class="item item-avatar" ng-click="browse(event.link)">
+		            <img src="img/latechsmall.png">
+					
+		            <b>{{event.subject}}</b><br />
+		            <span style="font-style:italic;">le : {{event.date}} &agrave; {{event.hour}}</span><br />
+					<span style="font-style:italic;">lieu : {{event.location}} - durée : {{event.duration | slug}}</span><br />
+					<span ng-bind-html="event.description"></span><br />
+					<span ng-bind-html="event.link"></span><br />
+					
+					
+		 <!-- <div collection-repeat="entry in entries" class="item item-avatar" ng-click="browse(entry.link)">
           <img src="img/latechsmall.png">
-          <b>{{entry.title}}</b><br>
-          <span ng-bind-html="entry.contentSnippet"></span>
+          <b>{{entry.title}}</b><br />
+          <span style="font-style:italic;">Publié le : {{entry.entryDate}}</span><br />
+          <span ng-bind-html="entry.contentSnippet"></span><br /> -->
+
+          <!-- <span ng-bind-html="entry.publishedDate"></span> -->
+
+          <!-- <span ng-bind-html="entry.publishedDate">{{entry.publishedDate}}</span> -->
 
         </div>
       </div>

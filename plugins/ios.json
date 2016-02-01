@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -54,7 +58,7 @@
         }
     },
     "installed_plugins": {
-        "com.ionic.keyboard": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ltanews103409"
         },
         "cordova-plugin-console": {
@@ -63,16 +67,19 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ltanews103409"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.ltanews103409"
-        },
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.ionicframework.ltanews103409"
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.ltanews103409"
         },
         "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ionicframework.ltanews103409"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.ltanews103409"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.ltanews103409"
         }
     },
