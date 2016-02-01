@@ -16,3 +16,12 @@ angular.module('starter.services')
 		getEvents: getEvents
 	};	
 })
+
+.factory('tweetService', function($http) {
+	var getTweets = function() {	
+			return $http.get('http://assets.datanotes.org/latechamienoise/twitterfeed.php');	
+	}; 
+	return {
+		getTweets: getTweets
+	};	
+})
