@@ -10,24 +10,12 @@ angular.module('starter.controllers', [])
 
 // AGENDA : ok
 
- .controller('AgendaCtrl', function($scope, $http, $ionicLoading, agendaService, Settings) {
-
-	 $scope.$on('$ionicView.enter', function() { // refreshing view on enter
-		 $ionicLoading.show({
-			 content: 'Loading',
-			 animation: 'fade-in',
-			 showBackdrop: true,
-			 maxWidth: 200,
-			 showDelay: 0
-		 });  
-		 $scope.init();
-	 });
+ .controller('AgendaCtrl', function($scope, $http, agendaService, Settings) {
 
 	 $scope.init = function() { // get data from import.io service and fill the scope
 		 $scope.rssnb = Settings.getOptions('RssNb');
 	
 		 agendaService.getEvents().success(function(data, status, headers, config) {
-			 $ionicLoading.hide();
 			 $scope.events = data.results;
 			 console.log(data.results.length);
 			 for (i = 0; i < data.results.length; i++) {
