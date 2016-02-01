@@ -10,20 +10,13 @@ angular.module('starter.controllers', [])
 
 // AGENDA : ok
 
- .controller('AgendaCtrl', function($scope, $http, agendaService, Settings) {
+.controller('AgendaCtrl', function($scope, $http, agendaService, Settings) {
 
 	 $scope.init = function() { // get data from import.io service and fill the scope
 		 $scope.rssnb = Settings.getOptions('RssNb');
 	
 		 agendaService.getEvents().success(function(data, status, headers, config) {
 			 $scope.events = data.results;
-			 console.log(data.results.length);
-			 for (i = 0; i < data.results.length; i++) {
-				 console.log(data.results[i].date);
-				 if (angular.isArray(data.results[i].date)) {
-				 	 console.log("tableau : " + data.results[i].date);
-				 }
-			 }
 		 }).error(function(data, status, headers, config) {
 			 console.log("status : " + status + " FAILURE!");
 		 });
@@ -32,13 +25,33 @@ angular.module('starter.controllers', [])
 			 window.open(v, "_self", "location=yes");
 		 };
 	 }
+})
+
+.controller('TweetsCtrl', function($scope, $http, tweetService, Settings) {
+
+	$scope.init = function() { // get data from twitter proxy service and fill the scope
 	
-	
- })
+	tweetService.getTweets().success(function(data, status, header, config) {
+		$scope.tweets = JSON.stringify(data);
+		prout = JSON.stringify(data);
+		 console.log("sortie tweets : " + prout);
+		/* for (i = 0; i < data.results.length; i++) {
+			console.log(data.results[i].date);
+			if (angular.isArray(data.results[i].date)) {
+				console.log("tableau : " + data.results[i].date);
+			}
+		} */
+	}).error(function(data, status, headers, config) {
+		console.log("status : " + status + " FAILURE!");
+	});
+  }
+})
+
+
 
 // TWEETS : to fix
 
-.controller('TweetsCtrl', function($scope, feedService, Settings) {
+/* .controller('TweetsCtrl', function($scope, feedService, Settings) {
 
   $scope.$on('$ionicView.enter', function() { // refreshing view on enter
     $scope.init();
@@ -60,7 +73,7 @@ angular.module('starter.controllers', [])
   $scope.browse = function(v) {
     window.open(v, "_self", "location=yes");
   }
-})
+}) */
 
 // SETTINGS
 

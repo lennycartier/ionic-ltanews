@@ -2,9 +2,9 @@
   <ion-content ng-init="init()">
     <ion-list>
       <div class="list">
-        <div collection-repeat="entry in entries" class="item item-avatar" ng-click="browse(entry.link)">
+        <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(entry.link)">
           <img src="img/twitter.png">
-          <b>{{entry.title}}</b><br>
+          <b>{{tweet.title}}</b><br>
           <span ng-bind-html="entry.contentSnippet"></span>
         </div>
       </div>
