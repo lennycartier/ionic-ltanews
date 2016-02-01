@@ -13,6 +13,7 @@ dist
 platforms/
 plugins/
 www/lib
+hooks/
 example/cordova/iOS/www/js/framework
 
 example/cordova/iOS/www/js/framework
