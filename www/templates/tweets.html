@@ -2,8 +2,16 @@
   <ion-content ng-init="init()">
     <ion-list>
       <div class="list">
-        <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(entry.link)">
-          <img src="img/twitter.png">
+        <!--<div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(entry.link)"> -->
+		 <a ng-repeat="tweet in tweets" 
+		            href="#" target="_blank" 
+		            class="item item-thumbnail-left">
+		           <img ng-src="#">
+		           <h2>{{tweet.title}}</h2>
+		          
+		         </a>
+		 
+		  <img src="img/twitter.png">
           <b>{{tweet.title}}</b><br>
           <span ng-bind-html="entry.contentSnippet"></span>
         </div>
