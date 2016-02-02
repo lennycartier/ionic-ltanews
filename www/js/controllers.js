@@ -14,17 +14,23 @@ angular.module('starter.controllers', [])
 
 	 $scope.init = function() { // get data from import.io service and fill the scope
 		 $scope.rssnb = Settings.getOptions('RssNb');
-	
 		 agendaService.getEvents().success(function(data, status, headers, config) {
 			 $scope.events = data.results;
 		 }).error(function(data, status, headers, config) {
 			 console.log("status : " + status + " FAILURE!");
 		 });
-	
-		 $scope.browse = function(v) { // get Rss details by opening inAppBrower
-			 window.open(v, "_self", "location=yes");
-		 };
 	 }
+	 
+	 $scope.browse = function(v) { // get Rss details by opening inAppBrower
+		 window.open(v, "_self", "location=yes");
+	 };
+	 
+     $scope.predicate = '+';
+     $scope.reverse = true;
+     $scope.order = function(predicate) {
+       $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+       $scope.predicate = predicate;
+     };
 })
 
 .controller('TweetsCtrl', function($scope, $http, tweetService, Settings) {
