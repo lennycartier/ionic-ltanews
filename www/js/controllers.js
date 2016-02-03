@@ -37,17 +37,7 @@ angular.module('starter.controllers', [])
 	
 		$scope.tweets = [];
 		tweetService.getTweets().success(function(data, status, header, config) {
-			// console.log(data)
-			$scope.tweets = xmlToJson(data);
-			console.log(data);
-			console.log("longueur : " + data.length);
-		/*	for (i = 0; i < data.length; i++) {
-				console.log("sortie " + data.entry[i]);
-			}; */
-		/*	angular.forEach(data.entry,function(tweet){
-				$scope.tweets.push(tweet);
-				console.log("sortie " + data.entry[1]);
-			});*/
+			$scope.tweets = xmlToJSON.parseString(data);
 		}).error(function(data, status, headers, config) {
 			console.log("status : " + status + " FAILURE!");
 		});
