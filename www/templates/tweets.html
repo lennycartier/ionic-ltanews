@@ -5,6 +5,9 @@
 		  <!-- {{tweets | json}} -->
         <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="">
 			titre : {{tweet.title}}<br />
+			id : {{tweet.id}}<br />
+			contenu : {{tweet.content}}<br />
+			auteur : {{tweet.author.name}}<br />
 			
 		<!-- <a ng-repeat="tweet in tweets" 
 		            href="#" target="_blank" 
