@@ -35,42 +35,18 @@ angular.module('starter.controllers', [])
 
 	$scope.init = function() { // get data from twitter proxy service and fill the scope
 	
+		var x2js = new X2JS();
 		$scope.tweets = [];
+		
 		tweetService.getTweets().success(function(data, status, header, config) {
-			$scope.tweets = xmlToJSON.parseString(data);
+			tweetlist = x2js.xml_str2json(data);
+			console.log(tweetlist.entries.entry);
+			$scope.tweets = tweetlist.entries.entry;
 		}).error(function(data, status, headers, config) {
 			console.log("status : " + status + " FAILURE!");
 		});
 	}
 })
-
-
-
-// TWEETS : to fix
-
-/* .controller('TweetsCtrl', function($scope, feedService, Settings) {
-
-  $scope.$on('$ionicView.enter', function() { // refreshing view on enter
-    $scope.init();
-  });
-
-  $scope.init = function() { // get data from service and fill the scope
-    var nb = Settings.getOptions('TwNb');
-    feedService.serve("http://ajax.googleapis.com/ajax/services/feed/load", "https://script.google.com/macros/s/AKfycbzy-FtnGEkBBShFym_H5-Y-70VCmurJ8POeYzTCHhStt75t8ew/exec?641366336325701632", nb)
-    .success(function(data) {
-      $scope.rssTitle = data.responseData.feed.title;
-      $scope.rssUrl = data.responseData.feed.feedUrl;
-      $scope.rssSiteUrl = data.responseData.feed.link;
-      $scope.entries = data.responseData.feed.entries;
-    })
-    .error(function(data) { // get Rss details by opening inAppBrower
-      console.log("ERROR: " + data);
-    });
-  }
-  $scope.browse = function(v) {
-    window.open(v, "_self", "location=yes");
-  }
-}) */
 
 // SETTINGS
 
