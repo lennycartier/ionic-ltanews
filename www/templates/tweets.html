@@ -7,7 +7,8 @@
       <div class="list">
 		  <!-- {{tweets | json}} -->
         <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="">
-			titre : {{tweet.title}}<br />
+			<b>{{tweet.title}}</b><br />
+			<span style="font-variant: small-caps;">{{tweet.author.name}}</span><br />
 			id : {{tweet.id}}<br />
 			contenu : {{tweet.content}}<br />
 			auteur : {{tweet.author.name}}<br />
