@@ -7,11 +7,9 @@
       <div class="list">
 		  <!-- {{tweets | json}} -->
         <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="">
-			<b>{{tweet.title}}</b><br />
-			<span style="font-variant: small-caps;">{{tweet.author.name}}</span><br />
-			id : {{tweet.id}}<br />
-			contenu : {{tweet.content}}<br />
-			auteur : {{tweet.author.name}}<br />
+			<b>laTechAmienoise</b> @laTechAmienoise<br>
+			<pre>{{tweet.content}}</pre><br />
+			
 			
 		<!-- <a ng-repeat="tweet in tweets" 
 		            href="#" target="_blank" 
@@ -23,7 +21,9 @@
 		 
 		  <img src="img/twitter.png">
           <b>{{tweet.title}}</b><br>
-          <span ng-bind-html="entry.contentSnippet"></span> -->
+          <span ng-bind-html="entry.contentSnippet"></span> 
+			<b>{{tweet.title}}</b><br /> 
+			id : {{tweet.id}}<br /> -->
         </div>
       </div>
     </ion-list>
