@@ -6,10 +6,12 @@
     <ion-list>
       <div class="list">
 		  <!-- {{tweets | json}} -->
-        <div ng-repeat="tweet in tweets" class="item item-avatar">
+        <div collection-repeat="tweet in tweets" class="item item-avatar">
 			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
-			<pre>{{tweet.content | linky}}</p></pre><br />
+			<pre ng-bind-html="tweet.content"></pre>
+			
+			<p ng-bind-html="trustAsHtml(question.body)"></p>
 			
 			
 		<!-- <a ng-repeat="tweet in tweets" 

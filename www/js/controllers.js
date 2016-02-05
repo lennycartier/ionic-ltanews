@@ -46,6 +46,8 @@ angular.module('starter.controllers', [])
 			console.log("status : " + status + " FAILURE!");
 		});
 	}
+	
+	
 })
 
 // SETTINGS
