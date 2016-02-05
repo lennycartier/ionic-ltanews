@@ -31,7 +31,16 @@ angular.module('starter.controllers', [])
      };
 })
 
-.controller('TweetsCtrl', function($scope, $http, tweetService, Settings) {
+.controller('TweetsCtrl', function($scope, $http, $ionicLoading, tweetService, Settings) {
+
+	$ionicLoading.show({
+	    content: 'Loading',
+	    animation: 'fade-in',
+	    showBackdrop: true,
+	    maxWidth: 200,
+	    showDelay: 0
+	  });
+
 
 	$scope.init = function() { // get data from twitter proxy service and fill the scope
 	
@@ -41,6 +50,7 @@ angular.module('starter.controllers', [])
 		tweetService.getTweets().success(function(data, status, header, config) {
 			tweetlist = x2js.xml_str2json(data);
 			console.log(tweetlist.entries.entry);
+			$ionicLoading.hide();
 			$scope.tweets = tweetlist.entries.entry;
 		}).error(function(data, status, headers, config) {
 			console.log("status : " + status + " FAILURE!");
