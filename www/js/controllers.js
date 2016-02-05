@@ -47,6 +47,10 @@ angular.module('starter.controllers', [])
 		});
 	}
 	
+ $scope.browse = function(v) { // get Rss details by opening inAppBrower
+	 window.open(v, "_self", "location=yes");
+ };
+	
 	
 })
 

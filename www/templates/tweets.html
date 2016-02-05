@@ -2,11 +2,11 @@
 <ion-nav-buttons side="right">
 <button menu-toggle="right" class="button button-icon icon ion-android-funnel" ng-click=""></button>
 </ion-nav-buttons>
-  <ion-content ng-init="init()">
+  <ion-content ng-init="init()" cache-view="false">
     <ion-list>
       <div class="list">
 		  <!-- {{tweets | json}} -->
-        <div collection-repeat="tweet in tweets" class="item item-avatar">
+        <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(tweet.url)">
 			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
 			<pre ng-bind-html="tweet.content"></pre>
