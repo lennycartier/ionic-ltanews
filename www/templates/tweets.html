@@ -6,9 +6,10 @@
     <ion-list>
       <div class="list">
 		  <!-- {{tweets | json}} -->
-        <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="">
+        <div ng-repeat="tweet in tweets" class="item item-avatar">
+			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
-			<pre>{{tweet.content}}</pre><br />
+			<pre>{{tweet.content | linky}}</p></pre><br />
 			
 			
 		<!-- <a ng-repeat="tweet in tweets" 
