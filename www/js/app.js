@@ -19,6 +19,16 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
+    .run(function($ionicPlatform, $ionicPopup) {
+        $ionicPlatform.ready(function() {
+            if(typeof analytics !== undefined) {
+                analytics.startTrackerWithId("UA-18564279-17");
+            } else {
+                console.log("Google Analytics Unavailable");
+            }
+        });
+    });
   });
 })
 
