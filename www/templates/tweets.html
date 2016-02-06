@@ -1,11 +1,11 @@
 <ion-view view-title="@laTechAmienoise timeline">
 <ion-nav-buttons side="right">
-<button menu-toggle="right" class="button button-icon icon ion-android-funnel" ng-click=""></button>
+<button menu-toggle="right" class="button button-icon icon ion-android-funnel" ng-click="order('+')"></button>
 </ion-nav-buttons>
   <ion-content ng-init="init()" cache-view="false">
     <ion-list>
       <div class="list">
-        <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(tweet.url)">
+        <div collection-repeat="tweet in tweets | orderBy:predicate:reverse" class="item item-avatar" ng-click="browse(tweet.url)">
 			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
 			<pre ng-bind-html="tweet.content"></pre>

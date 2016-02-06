@@ -51,7 +51,7 @@ angular.module('starter.controllers', [])
 	});	
 
 	$ionicLoading.show({
-	    content: 'Loading',
+	    content: 'Chargement',
 	    animation: 'fade-in',
 	    showBackdrop: true,
 	    maxWidth: 200,
@@ -75,6 +75,13 @@ angular.module('starter.controllers', [])
 	
  $scope.browse = function(v) { // get Rss details by opening inAppBrower
 	 window.open(v, "_self", "location=yes");
+ };
+ 
+ $scope.predicate = '+';
+ $scope.reverse = true;
+ $scope.order = function(predicate) {
+   $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+   $scope.predicate = predicate;
  };
 	
 	
