@@ -89,6 +89,6 @@ var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/tweets');
+  $urlRouterProvider.otherwise('/app/agenda');
 
 });
