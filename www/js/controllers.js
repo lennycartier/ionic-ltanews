@@ -78,7 +78,7 @@ angular.module('starter.controllers', [])
  };
  
  $scope.predicate = '+';
- $scope.reverse = true;
+ $scope.reverse = false;
  $scope.order = function(predicate) {
    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
    $scope.predicate = predicate;
