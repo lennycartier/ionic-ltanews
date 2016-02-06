@@ -8,11 +8,20 @@ angular.module('starter.controllers', [])
    };
  })
 
-.controller('AgendaCtrl', function($scope, $http, agendaService, Settings) {
+.controller('AgendaCtrl', function($scope, $http, $ionicLoading, agendaService, Settings) {
+	
+	$ionicLoading.show({
+	    content: 'Loading',
+	    animation: 'fade-in',
+	    showBackdrop: true,
+	    maxWidth: 200,
+	    showDelay: 0
+	  });
 
 	 $scope.init = function() { // get data from import.io service and fill the scope
 		 $scope.rssnb = Settings.getOptions('RssNb');
 		 agendaService.getEvents().success(function(data, status, headers, config) {
+			 $ionicLoading.hide();
 			 $scope.events = data.results;
 		 }).error(function(data, status, headers, config) {
 			 console.log("status : " + status + " FAILURE!");
@@ -40,7 +49,6 @@ angular.module('starter.controllers', [])
 	    maxWidth: 200,
 	    showDelay: 0
 	  });
-
 
 	$scope.init = function() { // get data from twitter proxy service and fill the scope
 	
