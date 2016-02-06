@@ -5,7 +5,7 @@
   <ion-content ng-init="init()" cache-view="false">
   	<ion-list>
       <div class="list">
-		  <div collection-repeat="event in events | limitTo:rssnb | orderBy:predicate:reverse" class="item item-avatar item-text-wrap" ng-click="browse(event.link)">
+		  <div collection-repeat="event in events | orderBy:predicate:reverse" class="item item-avatar item-text-wrap" ng-click="browse(event.link)">
 		            <img src="img/latechsmall.png">
 		            <b>{{event.subject}}</b><br/>
 		
