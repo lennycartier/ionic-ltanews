@@ -5,28 +5,11 @@
   <ion-content ng-init="init()" cache-view="false">
     <ion-list>
       <div class="list">
-		  <!-- {{tweets | json}} -->
         <div collection-repeat="tweet in tweets" class="item item-avatar" ng-click="browse(tweet.url)">
 			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
 			<pre ng-bind-html="tweet.content"></pre>
-			
 			<p ng-bind-html="trustAsHtml(question.body)"></p>
-			
-			
-		<!-- <a ng-repeat="tweet in tweets" 
-		            href="#" target="_blank" 
-		            class="item item-thumbnail-left">
-		           <img ng-src="#">
-		           <h2>{{tweet.title}}</h2>
-		          
-		         </a>
-		 
-		  <img src="img/twitter.png">
-          <b>{{tweet.title}}</b><br>
-          <span ng-bind-html="entry.contentSnippet"></span> 
-			<b>{{tweet.title}}</b><br /> 
-			id : {{tweet.id}}<br /> -->
         </div>
       </div>
     </ion-list>
