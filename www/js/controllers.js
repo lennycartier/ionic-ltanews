@@ -100,7 +100,7 @@ angular.module('starter.controllers', [])
   $scope.rss.nb = Settings.RssNb;
   $scope.tweets.nb = Settings.TwNb;
 
-  $scope.localerecup = $locale.id;
+ // $scope.localerecup = $locale.id;
 
   $scope.setRssNb = function() { // save how many rss items to fetch
     Settings.setOptions('RssNb',$scope.rss.nb);
