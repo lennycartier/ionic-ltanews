@@ -66,7 +66,6 @@ angular.module('starter.controllers', [])
 		
 		tweetService.getTweets().success(function(data, status, header, config) {
 			tweetlist = x2js.xml_str2json(data);
-			console.log(tweetlist.entries.entry);
 			$ionicLoading.hide();
 			$scope.tweets = tweetlist.entries.entry;
 		}).error(function(data, status, headers, config) {
