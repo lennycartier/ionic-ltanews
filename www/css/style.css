@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+div.title {
+	font-family: sans-serif;
+	font-variant: small-caps; 
+}
