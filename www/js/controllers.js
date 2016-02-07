@@ -12,6 +12,7 @@ angular.module('starter.controllers', [])
 	
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.agenda');
+	  $scope.rssnb = Settings.getOptions('RssNb');
 	});	
 	
 	$ionicLoading.show({
@@ -23,7 +24,6 @@ angular.module('starter.controllers', [])
 	  });
 
 	 $scope.init = function() { // get data from import.io service and fill the scope
-		 $scope.rssnb = Settings.getOptions('RssNb');
 		 agendaService.getEvents().success(function(data, status, headers, config) {
 			 $ionicLoading.hide();
 			 $scope.events = data.results;
@@ -48,6 +48,7 @@ angular.module('starter.controllers', [])
 
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.tweets');
+	  $scope.tweetsnb = Settings.getOptions('TwNb');
 	});	
 
 	$ionicLoading.show({

@@ -42,7 +42,7 @@ var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
     templateUrl: 'templates/menu.html'
   })
 
- /* .state('app.settings', {
+  .state('app.settings', {
     url: '/settings',
     views: {
       'menuContent': {
@@ -51,8 +51,7 @@ var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
         cache: 'false'
       }
     }
-  }) */
-
+  }) 
   .state('app.browse', {
       url: '/browse',
       views: {

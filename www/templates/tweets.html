@@ -5,7 +5,7 @@
   <ion-content ng-init="init()" cache-view="false">
     <ion-list>
       <div class="list">
-        <div collection-repeat="tweet in tweets | orderBy:predicate:reverse" class="item item-avatar" ng-click="browse(tweet.url)">
+        <div collection-repeat="tweet in tweets | orderBy:predicate:reverse | limitTo:tweetsnb" class="item item-avatar" ng-click="browse(tweet.url)">
 			<img src="img/twitter.png">
 			<b>laTechAmienoise</b> @laTechAmienoise<br>
 			<pre ng-bind-html="tweet.content"></pre>
