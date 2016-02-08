@@ -89,7 +89,11 @@ angular.module('starter.controllers', [])
 
 // SETTINGS
 
-.controller('SettingsCtrl', function($scope, $localStorage, $locale, Settings) {
+.controller('SettingsCtrl', function($scope, $localStorage, $locale, $cordovaGoogleAnalytics, Settings) {
+	
+ $scope.$on('$ionicView.afterEnter', function(){
+  $cordovaGoogleAnalytics.trackView('app.settings');
+  });		
 
   $scope.rss = {}; // init form
   $scope.tweets = {};
