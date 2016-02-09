@@ -3,6 +3,7 @@
 <button menu-toggle="right" class="button button-icon icon ion-android-funnel" ng-click="order('+')"></button>
 </ion-nav-buttons>
   <ion-content ng-init="init()" cache-view="false">
+  <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <ion-list>
       <div class="list">
         <div collection-repeat="tweet in tweets | orderBy:predicate:reverse | limitTo:tweetsnb" class="item item-avatar" ng-click="browse(tweet.url)">

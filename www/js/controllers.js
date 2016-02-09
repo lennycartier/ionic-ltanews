@@ -73,6 +73,18 @@ angular.module('starter.controllers', [])
 		});
 	}
 	
+	$scope.doRefresh = function() {
+		var x2js = new X2JS();
+		tweetService.getTweets().success(function(data, status, header, config) {
+			tweetlist = x2js.xml_str2json(data);
+			$scope.tweets = tweetlist.entries.entry.concat($scope.tweets);
+		}).error(function(data, status, headers, config) {
+			console.log("status : " + status + " FAILURE!");
+		});
+		$scope.$broadcast('scroll.refreshComplete');
+	};
+
+	
  $scope.browse = function(v) { // get Rss details by opening inAppBrower
 	 window.open(v, "_self", "location=yes");
  };
