@@ -46,14 +46,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
       }
     }
   }) 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
     .state('app.agenda', {
       url: '/agenda',
       views: {
