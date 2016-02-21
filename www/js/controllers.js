@@ -1,12 +1,21 @@
 angular.module('starter.controllers', [])
 
 .filter('slug', function () {
-   return function (input) {
-     if (input) {
-       return input.replace(/Durée :/g,"");;
-     }
-   };
- })
+	return function (input) {
+		if (input) {
+			return input.replace(/Durée :/g,"");;
+		}
+	};
+})
+
+.filter('ifEmpty', function() {
+	return function(input, defaultValue) {
+		if (angular.isUndefined(input) || input === null || input === '') {
+			return defaultValue;
+		}
+		return input;
+	}
+})
 
 .controller('AgendaCtrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, agendaService, Settings) {
 	
