@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
    };
  })
 
-.controller('AgendaCtrl', function($scope, $http, $ionicLoading, $cordovaGoogleAnalytics, agendaService, Settings) {
+.controller('AgendaCtrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, agendaService, Settings) {
 	
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.agenda');
@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
      };
 })
 
-.controller('TweetsCtrl', function($scope, $http, $ionicLoading, $cordovaGoogleAnalytics, tweetService, Settings) {
+.controller('TweetsCtrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, tweetService, Settings) {
 
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.tweets');
