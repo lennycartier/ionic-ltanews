@@ -10,7 +10,7 @@ angular.module('starter.services')
   
 .factory('agendaService', function($http) {
 	var getEvents = function() {	
-			return $http.get('http://assets.datanotes.org/latechamienoise/agenda.out');	
+			return $http.get('http://assets.datanotes.org/latechamienoise/agenda2.out');	
 	}; 
 	return {
 		getEvents: getEvents
