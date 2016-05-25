@@ -18,12 +18,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AgendaCtrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, agendaService, Settings) {
-	
+
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.agenda');
 	  $scope.rssnb = Settings.getOptions('RssNb');
-	});	
-	
+	});
+
 	$ionicLoading.show({
 	    content: 'Loading',
 	    animation: 'fade-in',
@@ -40,11 +40,11 @@ angular.module('starter.controllers', [])
 			 console.log("status : " + status + " FAILURE!");
 		 });
 	 }
-	 
+
 	 $scope.browse = function(v) { // get Rss details by opening inAppBrower
 		 window.open(v, "_self", "location=yes");
 	 };
-	 
+
      $scope.predicate = '+';
      $scope.reverse = true;
      $scope.order = function(predicate) {
@@ -53,12 +53,28 @@ angular.module('starter.controllers', [])
      };
 })
 
+.controller('Agenda2Ctrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, Settings, eventService) {
+/*	$ionicLoading.show({
+		content: 'Loading',
+		animation: 'fade-in',
+		showBackdrop: true,
+		maxWidth: 200,
+		showDelay: 0
+	}); */
+
+	$scope.init = function() {
+		console.log("retrieving page");
+		eventService.getPage();
+	};
+	$scope.events = eventService.events;
+})
+
 .controller('TweetsCtrl', function($scope, $ionicLoading, $cordovaGoogleAnalytics, tweetService, Settings) {
 
 	$scope.$on('$ionicView.afterEnter', function(){
 	  $cordovaGoogleAnalytics.trackView('app.tweets');
 	  $scope.tweetsnb = Settings.getOptions('TwNb');
-	});	
+	});
 
 	$ionicLoading.show({
 	    content: 'Chargement',
@@ -69,10 +85,10 @@ angular.module('starter.controllers', [])
 	  });
 
 	$scope.init = function() { // get data from twitter proxy service and fill the scope
-	
+
 		var x2js = new X2JS();
 		$scope.tweets = [];
-		
+
 		tweetService.getTweets().success(function(data, status, header, config) {
 			tweetlist = x2js.xml_str2json(data);
 			$ionicLoading.hide();
@@ -81,7 +97,7 @@ angular.module('starter.controllers', [])
 			console.log("status : " + status + " FAILURE!");
 		});
 	}
-	
+
 	$scope.doRefresh = function() {
 		var x2js = new X2JS();
 		tweetService.getTweets().success(function(data, status, header, config) {
@@ -93,28 +109,28 @@ angular.module('starter.controllers', [])
 		$scope.$broadcast('scroll.refreshComplete');
 	};
 
-	
+
  $scope.browse = function(v) { // get Rss details by opening inAppBrower
 	 window.open(v, "_self", "location=yes");
  };
- 
+
  $scope.predicate = '+';
  $scope.reverse = false;
  $scope.order = function(predicate) {
    $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
    $scope.predicate = predicate;
  };
-	
-	
+
+
 })
 
 // SETTINGS
 
 .controller('SettingsCtrl', function($scope, $localStorage, $locale, $cordovaGoogleAnalytics, Settings) {
-	
+
  $scope.$on('$ionicView.afterEnter', function(){
   $cordovaGoogleAnalytics.trackView('app.settings');
-  });		
+  });
 
   $scope.rss = {}; // init form
   $scope.tweets = {};
