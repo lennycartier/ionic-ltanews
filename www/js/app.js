@@ -26,8 +26,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
 		});
 })
 
-.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
-  
+.config(function($stateProvider, $urlRouterProvider, $httpProvider, $compileProvider) {
+
+	$compileProvider.debugInfoEnabled(true);
+
   $stateProvider
 
     .state('app', {
@@ -45,13 +47,23 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
         cache: 'false'
       }
     }
-  }) 
+  })
     .state('app.agenda', {
       url: '/agenda',
       views: {
         'menuContent': {
           templateUrl: 'templates/agenda.html',
           controller: 'AgendaCtrl',
+          cache: 'false'
+        }
+      }
+    })
+		.state('app.agenda2', {
+      url: '/agenda2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/agenda2.html',
+          controller: 'Agenda2Ctrl',
           cache: 'false'
         }
       }
@@ -74,6 +86,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/agenda');
+  $urlRouterProvider.otherwise('/app/agenda2');
 
 });
