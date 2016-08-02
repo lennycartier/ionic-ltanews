@@ -52,16 +52,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
       url: '/agenda',
       views: {
         'menuContent': {
-          templateUrl: 'templates/agenda.html',
-          controller: 'AgendaCtrl',
-          cache: 'false'
-        }
-      }
-    })
-		.state('app.agenda2', {
-      url: '/agenda2',
-      views: {
-        'menuContent': {
           templateUrl: 'templates/agenda2.html',
           controller: 'Agenda2Ctrl',
           cache: 'false'
@@ -86,6 +76,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngSanitize', 'starter.services
         }
       });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/agenda2');
+  $urlRouterProvider.otherwise('/app/agenda');
 
 });
